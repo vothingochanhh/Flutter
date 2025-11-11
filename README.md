@@ -135,3 +135,41 @@ The core goal of this project is to learn data persistence (saving data even whe
   - Processing a list of `Expense` objects into a `Map` of category totals.
   - Using the `PieChart` widget to display `PieChartSectionData` based on the calculated totals.
 - **`path_provider`:** Used by Hive to find a valid local directory to store the database file.
+
+# 📸 Project 8: Photo Gallery App
+
+A simple gallery app that integrates with native device features to take photos or select them from the library.
+
+## ✨ Features
+
+- **Image Picker:** Uses the `image_picker` package to open the device's native Camera 📸 or Photo Library 🖼️.
+- **Permission Handling:** Uses `permission_handler` to properly request Camera and Photo Library permissions before access.
+- **Gallery View:** Displays the selected photos in a `GridView` with a multi-column layout.
+
+## 🚀 Core Concepts Demonstrated
+
+- **`image_picker`:** Bridging to native iOS/Android UI for selecting images.
+- **`permission_handler`:** Requesting and checking device permissions at runtime.
+- **`GridView.builder`:** Displaying items in a multi-column, scrollable grid.
+- **`File` Object:** Handling image files returned from the native picker.
+- **Native Configuration:** Modifying `Info.plist` (iOS) and `AndroidManifest.xml` (Android) to add permission descriptions.
+
+# 🔔 Project 9: Reminder App (Local Notifications)
+
+This is an advanced Flutter project that schedules and triggers native device notifications, even when the app is closed.
+
+## ✨ Features
+
+- **Schedule Notifications:** Users can select a future date and time using `showDatePicker` and `showTimePicker`.
+- **Persistent Reminders:** Uses `flutter_local_notifications` to schedule a "background trigger" with the device's native OS (Android/iOS).
+- **Works Offline/Closed:** The notification will fire at the scheduled time, even if the app is terminated or the device is restarted (on Android).
+- **Permission Handling:** Correctly configures native files (`AndroidManifest.xml`, `AppDelegate.swift`) and requests notification permissions at runtime.
+
+## 🚀 Core Concepts Demonstrated
+
+- **`flutter_local_notifications`:** The core package for initializing and scheduling zoned, time-specific notifications.
+- **`timezone` & `flutter_native_timezone_latest`:** Required to handle different timezones and ensure notifications fire at the correct local time.
+- **Native Configuration:**
+  - **Android:** Setting up `notification_icon`, `RECEIVE_BOOT_COMPLETED` permission, and `SCHEDULE_EXACT_ALARM`.
+  - **iOS:** Configuring `AppDelegate.swift` to handle notification permissions.
+- **`DateTimePicker`:** Using `showDatePicker` and `showTimePicker` to create a `DateTime` object for scheduling.
