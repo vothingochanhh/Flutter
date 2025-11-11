@@ -40,3 +40,22 @@ This is a real-time news application built with Flutter. It fetches live data fr
 - **`FutureBuilder`:** The core widget used to handle the different states of an API call (loading, error, and success/data).
 - **`url_launcher`:** For opening external links.
 - **`flutter_dotenv`:** For securely storing and accessing the API key.
+
+# 📚 Project 4: Chat UI Clone
+
+This project is a visual clone of a modern chat interface, similar to WhatsApp or Messenger. The focus is purely on UI/UX design, layout, and scrolling, not on backend functionality.
+
+## ✨ Features
+
+- **Dynamic Message Bubbles:** The UI distinguishes between "sent" messages (aligned right, blue background) and "received" messages (aligned left, dark grey background).
+- **Complex Layout:** Uses a `Column` to separate the scrolling chat history (`ListView`) from the fixed message input bar at the bottom.
+- **Custom Styling:** `Container` widgets are styled with `BorderRadius` to create the classic "bubble" shape.
+- **Mock Input Bar:** A functional-looking (but non-operative) input bar with a `TextField` and "Send" icon.
+
+## 🚀 Core Concepts Demonstrated
+
+- **`ListView.builder`:** For creating the scrollable list of messages.
+- **`Row` & `Column`:** Used extensively for structuring the screen and aligning message bubbles.
+- **`Container`:** Heavily used for padding, margins, color, and `BoxDecoration` (to create the bubble shape).
+- **`Expanded`:** To make the `ListView` fill all available space above the input bar.
+- **Layout Logic:** Using ternary operators (`isMe ? ... : ...`) inside the `build` method to dynamically change the alignment and styling of widgets.
