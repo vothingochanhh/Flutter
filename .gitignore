@@ -15,3 +15,5 @@
 **/android/app/build/
 **/android/build/
 ... (phần còn lại của file .gitignore) ...
+
+.env
