@@ -106,3 +106,32 @@ This project combines two key asynchronous concepts: fetching device data (GPS l
 - **`FutureBuilder`:** Used to handle the complex asynchronous state, showing a "loading" indicator while fetching the location/weather, an error message if permissions are denied (e.g., "Location services are disabled."), or the weather data on success.
 - **JSON Parsing:** Parsing the complex JSON response from OpenWeatherMap into a custom `Weather` model class.
 - **Native Permissions:** Configuring `AndroidManifest.xml` (Android) and `Info.plist` (iOS) to request necessary user permissions.
+
+# 💾 Project 7: Expense Tracker (Local Storage)
+
+This is an offline-first expense manager app that allows users to record, save, and visualize their daily spending.
+
+The core goal of this project is to learn data persistence (saving data even when the app closes) using a local database, and data visualization using charts.
+
+## ✨ Features
+
+- **Data Persistence:** Uses **Hive** (a lightweight NoSQL database) to save all expenses. Data is retained even after the app is closed and restarted.
+- **CRUD Operations:** Users can **Add** new expenses (with name, amount, category), **Read** them in a list, and **Delete** them.
+- **Category Totals:** Automatically calculates the total amount spent per category.
+- **Data Visualization:** Includes a "Summary" screen with a **Pie Chart** (using `fl_chart`) to visualize the percentage of spending for each category.
+
+## 🚀 Core Concepts Demonstrated
+
+- **`Hive`:**
+  - Initializing Hive (`Hive.initFlutter()`).
+  - Creating custom model classes (`Expense`) that `extend HiveObject`.
+  - Using `HiveType` and `HiveField` annotations.
+  - Running `build_runner` to generate `TypeAdapter`s.
+  - Opening a `Box` (`Hive.openBox<Expense>`).
+  - Writing data (`box.add()`) and deleting data (`box.deleteAt()`).
+- **`hive_flutter`:**
+  - Using `ValueListenableBuilder` to listen to a Hive `Box` and automatically rebuild the UI in real-time when data changes.
+- **`fl_chart`:**
+  - Processing a list of `Expense` objects into a `Map` of category totals.
+  - Using the `PieChart` widget to display `PieChartSectionData` based on the calculated totals.
+- **`path_provider`:** Used by Hive to find a valid local directory to store the database file.
