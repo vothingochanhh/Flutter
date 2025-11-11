@@ -173,3 +173,25 @@ This is an advanced Flutter project that schedules and triggers native device no
   - **Android:** Setting up `notification_icon`, `RECEIVE_BOOT_COMPLETED` permission, and `SCHEDULE_EXACT_ALARM`.
   - **iOS:** Configuring `AppDelegate.swift` to handle notification permissions.
 - **`DateTimePicker`:** Using `showDatePicker` and `showTimePicker` to create a `DateTime` object for scheduling.
+
+# 🔐 Project 10: Firebase Login App
+
+This is a complete login/registration app using **Firebase Authentication** as a backend-as-a-service (BaaS).
+
+## ✨ Features
+
+- **Authentication:** Full Email/Password authentication (Register and Login).
+- **Cloud Backend:** Uses Firebase Auth to securely handle user creation, password hashing, and session management.
+- **Auth State Management:** Uses a `StreamBuilder` on `FirebaseAuth.instance.authStateChanges()` to act as an "Auth Gate," automatically showing the `HomePage` if logged in or `LoginPage` if logged out.
+- **Separate Routes:** Protects a `HomePage` (private) from a `LoginPage` (public).
+- **Secure Setup:** Uses `flutterfire_cli` to configure the app and `firebase_options.dart`.
+
+## 🚀 Core Concepts Demonstrated
+
+- **`firebase_core`:** Initializing the Firebase app connection.
+- **`firebase_auth`:** The main package for:
+  - `createUserWithEmailAndPassword()`
+  - `signInWithEmailAndPassword()`
+  - `signOut()`
+- **`StreamBuilder`:** Subscribing to the `authStateChanges()` stream to reactively switch between UI (login vs. home) based on the user's auth state.
+- **Firebase Console:** Enabling the Email/Password sign-in method.
