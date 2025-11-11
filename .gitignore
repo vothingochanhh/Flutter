@@ -1,0 +1,17 @@
+# Bỏ qua TẤT CẢ các file này, bất kể nó nằm ở đâu
+**/.dart_tool/
+**/.idea/
+**/.metadata
+**/build/
+**/pubspec.lock
+
+# IDE-specific
+**/.vscode/
+**/*.iml
+**/*.ipr
+**/*.iws
+
+# Platform-specific build files
+**/android/app/build/
+**/android/build/
+... (phần còn lại của file .gitignore) ...
