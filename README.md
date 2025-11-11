@@ -84,3 +84,25 @@ This project builds a full Create, Read, Update, Delete (CRCRUD) notes applicati
 - **`ChangeNotifierProvider`:** "Provides" the `NoteProvider` instance to the entire widget tree (placed above `MaterialApp`).
 - **`Consumer<T>`:** Used by `NoteListScreen` to "listen" 👂 for changes and rebuild the `ListView` when the data updates.
 - **`context.read<T>()`:** Used to "call" 👄 methods (like `addNote`, `deleteNote`) from buttons, without subscribing to updates.
+
+# 🌦️ Project 6: Weather App (Geolocation)
+
+This is a real-time weather application that fetches and displays the current weather based on the user's **live geolocation**.
+
+This project combines two key asynchronous concepts: fetching device data (GPS location) and fetching external data (a REST API).
+
+## ✨ Features
+
+- **Geolocation:** Uses the `geolocator` package to get the device's current latitude and longitude.
+- **Permissions Handling:** Correctly requests and handles location permissions on both Android (`AndroidManifest.xml`) and iOS (`Info.plist`).
+- **Live Weather Data:** Calls the OpenWeatherMap API using the user's coordinates to get real-time weather.
+- **Dynamic UI:** Displays the user's city name, current temperature (rounded), a weather description, and a dynamic weather icon.
+- **Secure API Key:** Uses `flutter_dotenv` to store and access the OpenWeatherMap API key securely.
+
+## 🚀 Core Concepts Demonstrated
+
+- **`geolocator`:** For accessing the device's GPS and handling location permissions.
+- **`http`:** For making `GET` requests to the OpenWeatherMap REST API.
+- **`FutureBuilder`:** Used to handle the complex asynchronous state, showing a "loading" indicator while fetching the location/weather, an error message if permissions are denied (e.g., "Location services are disabled."), or the weather data on success.
+- **JSON Parsing:** Parsing the complex JSON response from OpenWeatherMap into a custom `Weather` model class.
+- **Native Permissions:** Configuring `AndroidManifest.xml` (Android) and `Info.plist` (iOS) to request necessary user permissions.
